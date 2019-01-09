@@ -166,8 +166,19 @@
                 ></a
               ><button class="gt-btn gt-btn-preview">
                 <span class="gt-btn-text">预览</span></button
-              ><button class="gt-btn gt-btn-login">
-                <span class="gt-btn-text">使用 GitHub 登录</span>
+              ><button class="gt-btn gt-btn-login" id="qqLoginBtn">
+                <svg
+                  viewBox="0 0 35 35"
+                  style="height: 13px;vertical-align: middle;"
+                >
+                  <path
+                    d="M25.694,13.182c0.268-0.915,0.416-1.88,0.416-2.881C26.11,4.612,21.5,0,15.81,0c-5.688,0-10.3,4.611-10.3,10.301   c0,1.001,0.149,1.966,0.416,2.881c-1.297,1.042-6.331,5.557-4.26,11.412c0,0,1.752-0.15,3.191-2.811   c0.437,1.703,1.251,3.25,2.361,4.543c-1.626,0.479-2.729,1.408-2.729,2.474c0,1.556,2.348,2.817,5.243,2.817   c1.965,0,3.676-0.582,4.573-1.44c0.494,0.065,0.992,0.11,1.503,0.11c0.512,0,1.011-0.045,1.503-0.11   c0.899,0.858,2.609,1.44,4.574,1.44c2.896,0,5.245-1.262,5.245-2.817c0-1.065-1.104-1.995-2.73-2.474   c1.109-1.293,1.925-2.84,2.362-4.543c1.438,2.66,3.188,2.811,3.188,2.811C32.024,18.738,26.99,14.223,25.694,13.182z"
+                    fill="#FFFFFF"
+                  />
+                </svg>
+                <span class="gt-btn-text" style="vertical-align: middle;"
+                  >使用 QQ 登录</span
+                >
               </button>
             </div>
           </div>
@@ -275,7 +286,21 @@
           return item;
         })
       });
-      document.querySelector("#comments").innerHTML = commentString;
+      document.getElementById("comments").innerHTML = commentString;
+      document.getElementById("qqLoginBtn").onclick = function() {
+        console.log(
+          QC.Login.showPopup({
+            appId: "101538993",
+            redirectURI: "https://www.zhangyangjun.com/callback/qq"
+          })
+        );
+      };
+      if (QC.Login.check()) {
+        QC.Login.getMe(function(openId, accessToken) {
+          console.log(openId);
+          console.log(accessToken);
+        });
+      }
     </script>
   </body>
 </html>
