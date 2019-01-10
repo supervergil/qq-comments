@@ -194,46 +194,47 @@
       </div>
     </div>
     <script id="tpl-comments" type="text/html">
-              {{each comments}}
-              <div
-                  class="gt-comment {{$value.user.site_admin?'gt-comment-admin':''}}"
-                  style="transform-origin: center top 0px;"
-              >
-              <div class="gt-avatar gt-comment-avatar">
-              <img
-                  src="{{$value.user.avatar_url}}"
-                  alt="头像"
-              />
-              </div>
-              <div class="gt-comment-content">
-              <div class="gt-comment-header">
-                  <a
-                  class="gt-comment-username"
-                  >{{$value.user.login}}</a
-                  ><span class="gt-comment-text">发表于</span
-                  ><span class="gt-comment-date">{{$value.created_date}}</span
-                  ><a class="gt-comment-reply"
-                  ><span class="gt-ico gt-ico-reply"
-                      ><span class="gt-svg"
-                      ><svg
-                          viewBox="0 0 1332 1024"
-                          version="1.1"
-                          xmlns="http://www.w3.org/2000/svg"
-                      >
-                          <path
-                          d="M529.066665 273.066666 529.066665 0 51.2 477.866666 529.066665 955.733335 529.066665 675.84C870.4 675.84 1109.333335 785.066665 1280 1024 1211.733335 682.666665 1006.933335 341.333334 529.066665 273.066666"
-                          ></path>
-                      </svg> </span></span
-                  ></a>
-              </div>
-              <div class="gt-comment-body markdown-body">
-                  {{@ $value.bodyHtml}}
-              </div>
-          </div>
+            {?each comments?}
+            <div
+                class="gt-comment {?$value.user.site_admin?'gt-comment-admin':''?}"
+                style="transform-origin: center top 0px;"
+            >
+            <div class="gt-avatar gt-comment-avatar">
+            <img
+                src="{?$value.user.avatar_url?}"
+                alt="头像"
+            />
+            </div>
+            <div class="gt-comment-content">
+            <div class="gt-comment-header">
+                <a
+                class="gt-comment-username"
+                >{?$value.user.login?}</a
+                ><span class="gt-comment-text">发表于</span
+                ><span class="gt-comment-date">{?$value.created_date?}</span
+                ><a class="gt-comment-reply"
+                ><span class="gt-ico gt-ico-reply"
+                    ><span class="gt-svg"
+                    ><svg
+                        viewBox="0 0 1332 1024"
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                        d="M529.066665 273.066666 529.066665 0 51.2 477.866666 529.066665 955.733335 529.066665 675.84C870.4 675.84 1109.333335 785.066665 1280 1024 1211.733335 682.666665 1006.933335 341.333334 529.066665 273.066666"
+                        ></path>
+                    </svg> </span></span
+                ></a>
+            </div>
+            <div class="gt-comment-body markdown-body">
+                {?@ $value.bodyHtml?}
+            </div>
         </div>
-      {{/each}}
+      </div>
+      {?/each?}
     </script>
     <script>
+      template.defaults.rules[1].test = /{\?([@#]?)[ \t]*(\/?)([\w\W]*?)[ \t]*\?}/;
       var data = [
         {
           id: 315419765,
@@ -288,17 +289,13 @@
       });
       document.getElementById("comments").innerHTML = commentString;
       document.getElementById("qqLoginBtn").onclick = function() {
-        console.log(
-          QC.Login.showPopup({
-            appId: "101538993",
-            redirectURI: "https://www.zhangyangjun.com/callback/qq"
-          })
-        );
+        location.href =
+          "https://graph.qq.com/oauth2.0/show?which=Login&display=pc&client_id=101538993&response_type=token&scope=all&redirect_uri=https%3A%2F%2Fwww.zhangyangjun.com%2Fcallback%2Fqq";
       };
       if (QC.Login.check()) {
         QC.Login.getMe(function(openId, accessToken) {
-          console.log(openId);
-          console.log(accessToken);
+          alert(openId);
+          alert(accessToken);
         });
       }
     </script>
