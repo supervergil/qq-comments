@@ -13,291 +13,145 @@
     <script src="./lib/js/markdown.min.js"></script>
     <script src="./lib/js/timeago.min.js"></script>
     <link rel="stylesheet" href="./lib/css/gitalk@1.4.1.css" />
-    <style type="text/css">
-      * {
-        margin: 0;
-        padding: 0;
-      }
-      .container {
-        margin: 0 auto;
-        padding-bottom: 60px;
-        max-width: 720px;
-        color: #6190e8;
-        font-family: "PingFang SC", Helvetica, "Microsoft YaHei", Arial,
-          sans-serif;
-      }
-      .hero {
-        margin: 80px 0;
-        text-align: center;
-      }
-      .logo {
-        display: inline-block;
-        text-decoration: none;
-        height: 50px;
-        line-height: 50px;
-        vertical-align: middle;
-      }
-      .hero h1 {
-        margin-left: 16px;
-        display: inline-block;
-        font-size: 32px;
-        font-weight: 500;
-        vertical-align: bottom;
-      }
-      .hero-intro {
-        margin: 28px 0;
-        font-size: 20px;
-        font-weight: 300;
-      }
-      .hero-buttons a {
-        display: inline-block;
-        text-decoration: none;
-        height: 36px;
-        line-height: 36px;
-        border-radius: 36px;
-      }
-      .btn-begin {
-        padding: 0 20px;
-        min-width: 80px;
-        color: white;
-        background-color: #6190e8;
-      }
-      .btn-github {
-        margin-left: 36px;
-        width: 120px;
-        color: #6190e8;
-        border: 1px solid #6190e8;
-      }
-      .demo-title {
-        text-align: center;
-      }
-      .demo-title span {
-        display: inline-block;
-        padding-bottom: 10px;
-        font-size: 20px;
-        border-bottom: 1px dashed #6190e8;
-        width: 120px;
-      }
-      @media (max-width: 720px) {
-        .container {
-          width: 90%;
-        }
-      }
-    </style>
   </head>
   <body>
-    <div class="container">
-      <div class="gt-container">
-        <div class="gt-meta">
-          <span class="gt-counts"
-            ><a
-              class="gt-link gt-link-counts"
-              href="https://github.com/gitalk/gitalk/issues/1"
-              target="_blank"
-              >1173</a
-            >
-            条评论</span
-          >
-          <div class="gt-user">
-            <div class="gt-user-inner">
-              <span class="gt-user-name">未登录用户</span
-              ><span class="gt-ico gt-ico-arrdown"
-                ><span class="gt-svg"
-                  ><svg
-                    viewBox="0 0 1024 1024"
-                    xmlns="http://www.w3.org/2000/svg"
-                    p-id="1619"
-                  >
-                    <path
-                      d="M511.872 676.8c-0.003 0-0.006 0-0.008 0-9.137 0-17.379-3.829-23.21-9.97l-251.277-265.614c-5.415-5.72-8.743-13.464-8.744-21.984 0-17.678 14.33-32.008 32.008-32.008 9.157 0 17.416 3.845 23.25 10.009l228.045 241.103 228.224-241.088c5.855-6.165 14.113-10.001 23.266-10.001 8.516 0 16.256 3.32 21.998 8.736 12.784 12.145 13.36 32.434 1.264 45.233l-251.52 265.6c-5.844 6.155-14.086 9.984-23.223 9.984-0.025 0-0.051 0-0.076 0z"
-                      p-id="1620"
-                    ></path></svg></span
-              ></span>
-            </div>
-          </div>
-        </div>
-        <div class="gt-header">
-          <a class="gt-avatar-github"
-            ><span class="gt-ico gt-ico-github"
-              ><span class="gt-svg"
-                ><svg
-                  viewBox="0 0 1024 1024"
-                  version="1.1"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M64 524C64 719.602 189.356 885.926 364.113 947.017 387.65799 953 384 936.115 384 924.767L384 847.107C248.118 863.007 242.674 773.052 233.5 758.001 215 726.501 171.5 718.501 184.5 703.501 215.5 687.501 247 707.501 283.5 761.501 309.956 800.642 361.366 794.075 387.658 787.497 393.403 763.997 405.637 743.042 422.353 726.638 281.774 701.609 223 615.67 223 513.5 223 464.053 239.322 418.406 271.465 381.627 251.142 320.928 273.421 269.19 276.337 261.415 334.458 256.131 394.888 302.993 399.549 306.685 432.663 297.835 470.341 293 512.5 293 554.924 293 592.81 297.896 626.075 306.853 637.426 298.219 693.46 258.054 747.5 262.966 750.382 270.652 772.185 321.292 753.058 381.083 785.516 417.956 802 463.809 802 513.5 802 615.874 742.99 701.953 601.803 726.786 625.381 750.003 640 782.295 640 818.008L640 930.653C640.752 939.626 640 948.664978 655.086 948.665 832.344 888.962 960 721.389 960 524 960 276.576 759.424 76 512 76 264.577 76 64 276.576 64 524Z"
-                  ></path>
-                </svg> </span></span
-          ></a>
-          <div class="gt-header-comment">
-            <textarea
-              class="gt-header-textarea "
-              placeholder="说点什么"
-              style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 72px;"
-            ></textarea>
-            <div class="gt-header-preview markdown-body hide"></div>
-            <div class="gt-header-controls">
-              <a
-                class="gt-header-controls-tip"
-                href="https://guides.github.com/features/mastering-markdown/"
-                target="_blank"
-                ><span class="gt-ico gt-ico-tip"
-                  ><span class="gt-svg"
-                    ><svg
-                      viewBox="0 0 1024 1024"
-                      version="1.1"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M512 366.949535c-16.065554 0-29.982212 13.405016-29.982212 29.879884l0 359.070251c0 16.167882 13.405016 29.879884 29.982212 29.879884 15.963226 0 29.879884-13.405016 29.879884-29.879884L541.879884 396.829419C541.879884 380.763865 528.474868 366.949535 512 366.949535L512 366.949535z"
-                        p-id="3083"
-                      ></path>
-                      <path
-                        d="M482.017788 287.645048c0-7.776956 3.274508-15.553912 8.80024-21.181973 5.525732-5.525732 13.302688-8.80024 21.181973-8.80024 7.776956 0 15.553912 3.274508 21.079644 8.80024 5.525732 5.62806 8.80024 13.405016 8.80024 21.181973 0 7.776956-3.274508 15.656241-8.80024 21.181973-5.525732 5.525732-13.405016 8.697911-21.079644 8.697911-7.879285 0-15.656241-3.274508-21.181973-8.697911C485.292295 303.301289 482.017788 295.524333 482.017788 287.645048L482.017788 287.645048z"
-                        p-id="3084"
-                      ></path>
-                      <path
-                        d="M512 946.844409c-239.8577 0-434.895573-195.037873-434.895573-434.895573 0-239.8577 195.037873-434.895573 434.895573-434.895573 239.755371 0 434.895573 195.037873 434.895573 434.895573C946.895573 751.806535 751.755371 946.844409 512 946.844409zM512 126.17088c-212.740682 0-385.880284 173.037274-385.880284 385.777955 0 212.740682 173.037274 385.777955 385.880284 385.777955 212.740682 0 385.777955-173.037274 385.777955-385.777955C897.777955 299.208154 724.740682 126.17088 512 126.17088z"
-                        p-id="3085"
-                      ></path>
-                    </svg> </span
-                  ><span class="gt-ico-text">支持 Markdown 语法</span></span
-                ></a
-              ><button class="gt-btn gt-btn-preview">
-                <span class="gt-btn-text">预览</span></button
-              ><button class="gt-btn gt-btn-login" id="qqLoginBtn">
-                <svg
-                  viewBox="0 0 35 35"
-                  style="height: 13px;vertical-align: middle;"
-                >
-                  <path
-                    d="M25.694,13.182c0.268-0.915,0.416-1.88,0.416-2.881C26.11,4.612,21.5,0,15.81,0c-5.688,0-10.3,4.611-10.3,10.301   c0,1.001,0.149,1.966,0.416,2.881c-1.297,1.042-6.331,5.557-4.26,11.412c0,0,1.752-0.15,3.191-2.811   c0.437,1.703,1.251,3.25,2.361,4.543c-1.626,0.479-2.729,1.408-2.729,2.474c0,1.556,2.348,2.817,5.243,2.817   c1.965,0,3.676-0.582,4.573-1.44c0.494,0.065,0.992,0.11,1.503,0.11c0.512,0,1.011-0.045,1.503-0.11   c0.899,0.858,2.609,1.44,4.574,1.44c2.896,0,5.245-1.262,5.245-2.817c0-1.065-1.104-1.995-2.73-2.474   c1.109-1.293,1.925-2.84,2.362-4.543c1.438,2.66,3.188,2.811,3.188,2.811C32.024,18.738,26.99,14.223,25.694,13.182z"
-                    fill="#FFFFFF"
-                  />
-                </svg>
-                <span class="gt-btn-text" style="vertical-align: middle;"
-                  >使用 QQ 登录</span
-                >
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="gt-comments">
-          <div id="comments" style="position: relative;"></div>
-          <div class="gt-comments-controls">
-            <button class="gt-btn gt-btn-loadmore">
-              <span class="gt-btn-text">加载更多</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <script id="tpl-comments" type="text/html">
-            {?each comments?}
-            <div
-                class="gt-comment {?$value.user.site_admin?'gt-comment-admin':''?}"
-                style="transform-origin: center top 0px;"
-            >
-            <div class="gt-avatar gt-comment-avatar">
-            <img
-                src="{?$value.user.avatar_url?}"
-                alt="头像"
-            />
-            </div>
-            <div class="gt-comment-content">
-            <div class="gt-comment-header">
-                <a
-                class="gt-comment-username"
-                >{?$value.user.login?}</a
-                ><span class="gt-comment-text">发表于</span
-                ><span class="gt-comment-date">{?$value.created_date?}</span
-                ><a class="gt-comment-reply"
-                ><span class="gt-ico gt-ico-reply"
-                    ><span class="gt-svg"
-                    ><svg
-                        viewBox="0 0 1332 1024"
-                        version="1.1"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                        d="M529.066665 273.066666 529.066665 0 51.2 477.866666 529.066665 955.733335 529.066665 675.84C870.4 675.84 1109.333335 785.066665 1280 1024 1211.733335 682.666665 1006.933335 341.333334 529.066665 273.066666"
-                        ></path>
-                    </svg> </span></span
-                ></a>
-            </div>
-            <div class="gt-comment-body markdown-body">
-                {?@ $value.bodyHtml?}
-            </div>
-        </div>
-      </div>
-      {?/each?}
-    </script>
+    <div class="container" id="whole-container"></div>
     <script>
-      template.defaults.rules[1].test = /{\?([@#]?)[ \t]*(\/?)([\w\W]*?)[ \t]*\?}/;
-      var data = [
-        {
-          id: 315419765,
-          user: {
-            login: "booxood",
-            avatar_url: "https://avatars3.githubusercontent.com/u/2151410?v=4",
-            site_admin: true
-          },
-          created_date: "2017-07-14T17:36:10Z",
-          body: "hello Gitalk~"
-        },
-        {
-          id: 315587297,
-          user: {
-            login: "mamboer",
-            avatar_url: "https://avatars0.githubusercontent.com/u/85879?v=4",
-            site_admin: false
-          },
-          created_date: "2017-07-16T05:40:46Z",
-          body: "哎哟，不错哟"
-        },
-        {
-          id: 317728942,
-          user: {
-            login: "yevolcn",
-            avatar_url: "https://avatars1.githubusercontent.com/u/1324016?v=4",
-            site_admin: false
-          },
-          created_date: "2017-07-25T12:57:47Z",
-          body: "## 嘿嘿嘿不错呦\n- 厉害啦\n- 棒棒哒\n### 那就这样吧"
-        },
-        {
-          id: 317758881,
-          user: {
-            login: "aNd1coder",
-            avatar_url: "https://avatars0.githubusercontent.com/u/168796?v=4",
-            site_admin: false
-          },
-          created_date: "2017-07-25T14:39:23Z",
-          body: "💯"
-        }
-      ];
-      var commentString = template("tpl-comments", {
-        comments: data.map(function(item) {
-          item.bodyHtml = markdown.toHTML(item.body);
-          item.created_date = new timeago().format(
-            new Date(item.created_date),
-            "zh_CN"
-          );
-          return item;
-        })
-      });
-      document.getElementById("comments").innerHTML = commentString;
-      document.getElementById("qqLoginBtn").onclick = function() {
-        location.href =
-          "https://graph.qq.com/oauth2.0/show?which=Login&display=pc&client_id=101538993&response_type=token&scope=all&redirect_uri=https%3A%2F%2Fwww.zhangyangjun.com%2Fcallback%2Fqq";
-      };
-      if (QC.Login.check()) {
-        QC.Login.getMe(function(openId, accessToken) {
-          alert(openId);
-          alert(accessToken);
+
+        var qqComment = new QQComment("whole-container", {
+          appId: "101538993",
+          redirectURI: "https://www.zhangyangjun.com/callback/qq",
+          userInfo: localStorage.getItem("qq-user-info")
+            ? JSON.parse(localStorage.getItem("qq-user-info")).data
+            : null,
+          openId: localStorage.getItem("qq-user-openid"),
+          token: localStorage.getItem("qq-user-token")
         });
-      }
+
+        var page = 1;
+        var pageSize = 10;
+
+        var getCommentList = function(cb) {
+          axios
+            .post("/comment/getList", {
+              page: page,
+              pageSize: pageSize,
+              pathname: location.pathname
+            })
+            .then(function(res) {
+              if (res.status === 200) {
+                if (res.data.errno === 0) {
+                  document.getElementById("comment-count").innerHTML =
+                    res.data.data.count;
+                  if (res.data.data.data.length < pageSize) {
+                    qqComment.hideLoadMore();
+                  } else {
+                    qqComment.showLoadMore();
+                  }
+                  if (res.data.data.data.length === 0) {
+                    if (cb) {
+                      cb();
+                    }
+                    return false;
+                  }
+                  qqComment.addComments(
+                    res.data.data.data.map(function(item) {
+                      return {
+                        id: item.id,
+                        user: {
+                          open_id: item.user_id,
+                          name: item.nick_name,
+                          avatar: item.avatar,
+                          admin: item.is_admin
+                        },
+                        created_date: item.created_date,
+                        content: item.content
+                      };
+                    })
+                  );
+                  if (cb) {
+                    cb();
+                  }
+                } else {
+                  alert(res.data.errmsg);
+                }
+              }
+            });
+        };
+
+        // 点击加载更多回调
+
+        QQComment.onClickLoadMore = function() {
+          page += 1;
+          qqComment.showLoadMoreLoading();
+          getCommentList(function() {
+            qqComment.hideLoadMoreLoading();
+          });
+        };
+
+        // 点击删除回调
+        QQComment.onClickRemove = function() {
+          var self = this;
+          var flag = window.confirm("是否删除这条评论？");
+          if (flag) {
+            axios
+              .post("/comment/removeComment", {
+                id: self.getAttribute("data-id"),
+                access_token: localStorage.getItem("qq-user-token"),
+                openid: localStorage.getItem("qq-user-openid")
+              })
+              .then(function(res) {
+                if (res.status === 200) {
+                  if (res.data.errno === 0) {
+                    qqComment.clearCommentList();
+                    page = 1;
+                    getCommentList();
+                  } else {
+                    alert(res.data.errmsg);
+                  }
+                }
+              });
+          }
+        };
+
+        // 点击发布评论
+
+        QQComment.onClickPost = function() {
+          if (qqComment.isPosting()) {
+            return false;
+          }
+          var content = qqComment.getCommentContent();
+          if (!content) {
+            return alert("请输入内容！");
+          }
+          qqComment.showCommentLoading();
+          axios
+            .post("/comment/addComment", {
+              user_id: localStorage.getItem("qq-user-openid"),
+              pathname: location.pathname,
+              content: content,
+              access_token: localStorage.getItem("qq-user-token"),
+              openid: localStorage.getItem("qq-user-openid")
+            })
+            .then(function(res) {
+              if (res.status === 200) {
+                if (res.data.errno === 0) {
+                  qqComment.clearCommentContent();
+                  qqComment.clearCommentList();
+                  qqComment.hideCommentLoading();
+                  page = 1;
+                  getCommentList();
+                } else {
+                  alert(res.data.errmsg);
+                }
+              }
+            });
+        };
+
+        // 初始化加载
+
+        getCommentList();
+
     </script>
   </body>
 </html>
