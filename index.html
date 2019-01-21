@@ -1,111 +1,113 @@
 <!DOCTYPE html>
 
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+    />
+    <title>评论</title>
+    <script src="https://connect.qq.com/qc_jssdk.js"></script>
+    <script src="./lib/js/art-template@4.13.2.js"></script>
+    <script src="./lib/js/markdown.min.js"></script>
+    <script src="./lib/js/timeago.min.js"></script>
+    <script src="./lib/js/comment.js"></script>
+    <link rel="stylesheet" href="./lib/css/gitalk@1.4.1.css" />
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
-  <title>评论</title>
-  <script src="https://connect.qq.com/qc_jssdk.js"></script>
-  <script src="./lib/js/art-template@4.13.2.js"></script>
-  <script src="./lib/js/markdown.min.js"></script>
-  <script src="./lib/js/timeago.min.js"></script>
-  <script src="./lib/js/comment.js"></script>
-  <link rel="stylesheet" href="./lib/css/gitalk@1.4.1.css" />
-</head>
-
-<body>
-  <div class="container" style="max-width: 720px;" id="whole-container"></div>
-  <script>
-
-    var qqComment = new QQComment("whole-container", {
-      appId: "你的appId",
-      redirectURI: "https://www.zhangyangjun.com/callback/qq",
-      userInfo: {
-        access_token: "令牌",
-        avatar: "http://cdn.zhangyangjun.com/FhAv4-3PRz6o5K_BBCaTonBSXrW2.jpg",
-        nick_name: "本人账号",
-        openid: "123123"
-      },
-      openId: "123123",
-      token: "令牌"
-    });
-
-    var page = 1;
-    var pageSize = 10;
-
-    qqComment.addComments(
-      [{
-        id: 1,
-        user: {
-          open_id: "123123",
-          name: "本人账号",
-          avatar: "https://avatars2.githubusercontent.com/u/13966268?s=460&v=4",
-          admin: true
+  <body>
+    <div class="container" style="max-width: 720px;" id="whole-container"></div>
+    <script>
+      var qqComment = new QQComment("whole-container", {
+        appId: "你的appId",
+        redirectURI: "https://www.zhangyangjun.com/callback/qq",
+        userInfo: {
+          access_token: "令牌",
+          avatar:
+            "http://cdn.zhangyangjun.com/FhAv4-3PRz6o5K_BBCaTonBSXrW2.jpg",
+          nick_name: "本人账号",
+          openid: "123123"
         },
-        created_date: "2019-01-06 13:35:40",
-        content: "测试内容，可删除"
-      }]
-    );
+        openId: "123123",
+        token: "令牌"
+      });
 
-    // 点击加载更多回调
+      var page = 1;
+      var pageSize = 10;
 
-    QQComment.onClickLoadMore = function () {
-      page += 1;
-      qqComment.showLoadMoreLoading();
-      setTimeout(function () {
-        qqComment.addComments(
-          [{
-            id: 2,
-            user: {
-              open_id: "779879",
-              name: "其他账号",
-              avatar: "http://cdnq.duitang.com/uploads/item/201410/20/20141020223712_snvPP.jpeg",
-              admin: false
-            },
-            created_date: "2019-01-03 13:35:40",
-            content: "加载后的内容，可回复"
-          }]
-        );
-        qqComment.hideLoadMoreLoading();
-      }, 800)
-    };
+      qqComment.addComments([
+        {
+          id: 1,
+          user: {
+            open_id: "123123",
+            name: "本人账号",
+            avatar:
+              "https://avatars2.githubusercontent.com/u/13966268?s=460&v=4",
+            admin: true
+          },
+          created_date: "2019-01-06 13:35:40",
+          content: "测试内容，可删除"
+        }
+      ]);
 
-    // 点击注销
-    QQComment.onClickLogout = function () {
-      // 注销账号 只需要在刷新后保证new QQComment里面的userInfo参数为null就可以了
-      location.reload();
-    };
+      // 点击加载更多回调
 
-    // 点击删除回调
-    QQComment.onClickRemove = function () {
-      var self = this;
-      var flag = window.confirm("是否删除这条评论？");
-      if (flag) {
-        alert("这里写删除逻辑");
-      }
-    };
+      QQComment.onClickLoadMore = function() {
+        page += 1;
+        qqComment.showLoadMoreLoading();
+        setTimeout(function() {
+          qqComment.addComments([
+            {
+              id: 2,
+              user: {
+                open_id: "779879",
+                name: "其他账号",
+                avatar:
+                  "http://cdnq.duitang.com/uploads/item/201410/20/20141020223712_snvPP.jpeg",
+                admin: false
+              },
+              created_date: "2019-01-03 13:35:40",
+              content: "加载后的内容，可回复"
+            }
+          ]);
+          qqComment.hideLoadMoreLoading();
+          qqComment.hideLoadMore();
+        }, 800);
+      };
 
-    // 点击发布评论
+      // 点击注销
+      QQComment.onClickLogout = function() {
+        // 注销账号 只需要在刷新后保证new QQComment里面的userInfo参数为null就可以了
+        location.reload();
+      };
 
-    QQComment.onClickPost = function () {
-      if (qqComment.isPosting()) {
-        return false;
-      }
-      var content = qqComment.getCommentContent();
-      if (!content) {
-        return alert("请输入内容！");
-      }
-      qqComment.showCommentLoading();
-      // 发布逻辑
-      alert("这里写发布逻辑")
-      // qqComment.clearCommentContent();
-      // qqComment.clearCommentList();
-      qqComment.hideCommentLoading();
-    };
+      // 点击删除回调
+      QQComment.onClickRemove = function() {
+        var self = this;
+        var flag = window.confirm("是否删除这条评论？");
+        if (flag) {
+          alert("这里写删除逻辑");
+        }
+      };
 
+      // 点击发布评论
 
-  </script>
-</body>
-
+      QQComment.onClickPost = function() {
+        if (qqComment.isPosting()) {
+          return false;
+        }
+        var content = qqComment.getCommentContent();
+        if (!content) {
+          return alert("请输入内容！");
+        }
+        qqComment.showCommentLoading();
+        // 发布逻辑
+        alert("这里写发布逻辑");
+        // qqComment.clearCommentContent();
+        // qqComment.clearCommentList();
+        qqComment.hideCommentLoading();
+      };
+    </script>
+  </body>
 </html>
