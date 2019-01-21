@@ -25,7 +25,7 @@
 | QQComment.prototype.getCommentContent   | 获取评论内容    |                                                                                                                                                                   |
 | QQComment.prototype.clearCommentContent | 清空评论框内容 |                                                                                                                                                                   |
 | QQComment.prototype.showCommentLoading  | 显示评论按钮的loading |                                                                                                                                                                   |
-|                                         | 隐藏评论按钮的loading |                                                                                                                                                                   |
+| QQComment.prototype.hideCommentLoading  | 隐藏评论按钮的loading |                                                                                                                                                                   |
 
 ## 初始化
 
