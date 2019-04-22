@@ -1,0 +1,30 @@
+{
+  "name": "qq-comments",
+  "version": "2.0.0",
+  "description": "comment component with qq auth",
+  "author": {
+    "name": "supervergil",
+    "url": "https://www.zhangyangjun.com"
+  },
+  "main": "lib/u-slider.js",
+  "scripts": {
+    "dev": "parcel main.js",
+    "build": "parcel build main.js"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/supervergil/qq-comments"
+  },
+  "dependencies": {
+    "marked": "^0.6.2",
+    "nunjucks": "^3.2.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "node-sass": "^4.11.0",
+    "parcel-bundler": "^1.12.3",
+    "sass-loader": "^7.1.0"
+  }
+}
