@@ -3,8 +3,6 @@ import { format } from "timeago.js";
 import nunjucks from "nunjucks";
 import marked from "marked";
 
-nunjucks.configure(".", { autoescape: true });
-
 class QQComment {
   constructor(id, opts) {
     this.container = document.getElementById(id);
