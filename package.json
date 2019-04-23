@@ -16,9 +16,16 @@
     "type": "git",
     "url": "https://github.com/supervergil/qq-comments"
   },
+  "keywords": [
+    "qq",
+    "comments",
+    "comment",
+    "comment component"
+  ],
   "dependencies": {
     "marked": "^0.6.2",
-    "nunjucks": "^3.2.0"
+    "nunjucks": "^3.2.0",
+    "timeago.js": "^4.0.0-beta.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
