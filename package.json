@@ -6,7 +6,7 @@
     "name": "supervergil",
     "url": "https://www.zhangyangjun.com"
   },
-  "main": "lib/u-slider.js",
+  "main": "main.js",
   "scripts": {
     "dev": "parcel main.js",
     "build": "parcel build main.js"
