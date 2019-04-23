@@ -786,7 +786,7 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     position: absolute;
-    top: 3px;
+    top: 5px;
     width: 0.75em;
     height: 0.75em;
     margin-top: -0.1875em;
@@ -1293,7 +1293,7 @@
   }
   .name-dropdown {
     position: absolute;
-    margin-left: -50px;
+    margin-left: -20px;
     margin-top: 2px;
     padding: 10px;
     width: 100px;
@@ -1304,5 +1304,9 @@
   }
   .name-dropdown > a {
     color: #f56c6c;
+  }
+
+  #gt-user-name{
+    margin-right: -6px;
   }
 }
